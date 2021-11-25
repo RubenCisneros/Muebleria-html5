@@ -1,0 +1,26 @@
+{
+  "name": "muebleria-html5",
+  "version": "1.0.0",
+  "description": "Sitio web para una muebleria",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben Cisneros Haro",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.11",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-squoosh": "^0.9.0",
+    "htmlmin": "^0.0.7",
+    "squoosh": "^0.0.0"
+  }
+}

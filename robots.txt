@@ -4,4 +4,4 @@ Allow: /index.html
 Allow: /about.html
 Allow: /blog.html
 Allow: /shop.html
-Sitemap: https://www.sitio.com/sitemap.xml
+Sitemap: https://rubencisneros.github.io/Muebleria-html5/sitemap.xml

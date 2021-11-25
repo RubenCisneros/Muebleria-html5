@@ -20,7 +20,7 @@ function minifyHtml(){
             removeComments: true,
             collapseWhitespace: true
           }))
-        .pipe( dest('./dist'))
+        .pipe( dest('./docs'))
 }
 
 function css(){
@@ -28,7 +28,7 @@ function css(){
         .pipe(sourcemaps.init())
         .pipe( postcss([ autoprefixer(), cssnano() ]))
         .pipe( sourcemaps.write('.') )
-        .pipe( dest('dist/css'))
+        .pipe( dest('docs/css'))
 }
 
 function js(){
@@ -36,18 +36,18 @@ function js(){
         .pipe( sourcemaps.init() )
         .pipe( babel({ presets: ['@babel/env']}) )
         .pipe( sourcemaps.write('.') )
-        .pipe( dest('dist/js'))
+        .pipe( dest('docs/js'))
 }
 
 function images(){
     return src('src/images/**/*')
         .pipe( squoosh() )
-        .pipe( dest('dist/images') )
+        .pipe( dest('docs/images') )
 }
 
 function icons(){
     return src('src/*.ico')
-        .pipe(dest('dist'))
+        .pipe(dest('docs'))
 }
 
 function dev(){
@@ -58,7 +58,7 @@ function dev(){
 }
 
 function clean(){
-    return del(['dist/**', '!dist'])
+    return del(['docs/**', '!docs'])
 }
 
 exports.html = minifyHtml
@@ -67,5 +67,5 @@ exports.images = images
 exports.icons = icons
 exports.dev = dev
 exports.clean = clean
-exports.build = series(clean, parallel(minifyHtml, css, js, images))
+exports.build = series(clean, parallel(minifyHtml, css, js, images, icons))
 exports.default = parallel(minifyHtml, css, js)
